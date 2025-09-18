@@ -5,48 +5,94 @@ import SpaceCard from '../../Components/SpaceCard/SpaceCard';
 
 const OffersPage = () => {
     const navigate = useNavigate();
-  const spaces = [
-    {
-      title: "Hot Desk",
-      description: "Perfect for freelancers and remote workers who need flexibility",
-      price: "₱1,500/day",
-      features: [
-        "Shared workspace",
-        "High-speed WiFi",
-        "Coffee & Tea",
-        "Printing access",
-        "Community events"
-      ],
-      image: "🏢 Flexible Workspace"
-    },
-    {
-      title: "Private Office",
-      description: "Dedicated space for teams and growing businesses",
-      price: "₱25,000/month",
-      features: [
-        "Private room for 2-8 people",
-        "24/7 access",
-        "Meeting room credits",
-        "Storage space",
-        "Custom branding"
-      ],
-      image: "🏢 Private Space",
-      popular: true
-    },
-    {
-      title: "Meeting Rooms",
-      description: "Professional meeting spaces for important discussions",
-      price: "₱800/hour",
-      features: [
-        "4-12 person capacity",
-        "Video conferencing",
-        "Whiteboard & projector",
-        "Catering options",
-        "Professional ambiance"
-      ],
-      image: "🏢 Meeting Space"
-    }
-  ];
+ const spaces = [
+  {
+    title: "Hot Desk",
+    description: "Perfect for freelancers and remote workers who need flexibility",
+    price: "₱1,500/day",
+    features: [
+      "Shared workspace",
+      "High-speed WiFi",
+      "Coffee & Tea",
+      "Printing access",
+      "Community events",
+    ],
+    image:
+      "https://cdn-ilblgal.nitrocdn.com/LtOfWpqsvRVXueIPEGVTBaxpvBAGgdOw/assets/images/optimized/rev-022236d/www.officespacesoftware.com/wp-content/uploads/iStock-1308274885-blog-hero.jpg",
+  },
+  {
+    title: "Private Office",
+    description: "Dedicated space for teams and growing businesses",
+    price: "₱25,000/month",
+    features: [
+      "Private room for 2-8 people",
+      "24/7 access",
+      "Meeting room credits",
+      "Storage space",
+      "Custom branding",
+    ],
+    image:
+      "https://www.officeevolution.com/wp-content/uploads/2025/02/OE-Arlington-Private-Office-scaled-1.jpg",
+    popular: true,
+  },
+  {
+    title: "Meeting Rooms",
+    description: "Professional meeting spaces for important discussions",
+    price: "₱800/hour",
+    features: [
+      "4-12 person capacity",
+      "Video conferencing",
+      "Whiteboard & projector",
+      "Catering options",
+      "Professional ambiance",
+    ],
+    image:
+      "https://media.maiortvlift.com/maiormover/uploads/2024/05/tech-meeting-room-1024x538.jpg",
+  },
+  {
+    title: "Event Space",
+    description: "Host workshops, product launches, or networking events in style",
+    price: "₱3,500/hour",
+    features: [
+      "Up to 50 attendees",
+      "AV equipment included",
+      "Catering coordination",
+      "Flexible seating layouts",
+      "On-site support staff",
+    ],
+    image:
+      "https://images.squarespace-cdn.com/content/v1/60da576b8b440e12699c9263/84391c8c-f6a3-415a-988e-ff0534ace4fc/ovation+2.jpg",
+  },
+  {
+    title: "Podcast Studio",
+    description: "Record professional-quality audio or video content",
+    price: "₱1,200/hour",
+    features: [
+      "Soundproof booth",
+      "High-end microphones",
+      "Video recording setup",
+      "On-site technician",
+      "Editing support available",
+    ],
+    image:
+      "https://img.peerspace.com/image/upload/f_auto,q_auto,dpr_auto,w_3840/lf8hjobaxyeu9swcwms5",
+  },
+  {
+    title: "Day Pass",
+    description: "Record professional-quality audio or video content",
+    price: "₱1,200/hour",
+    features: [
+      "Soundproof booth",
+      "High-end microphones",
+      "Video recording setup",
+      "On-site technician",
+      "Editing support available",
+    ],
+    image:
+      "https://hubble.imgix.net/listings/uploads/spaces/4591/Gracechurch_Street_Coworking_Space_20.jpg?auto=format%2Ccompress&ar=4%3A3&fit=crop&q=30&w=1680",
+  },
+];
+
 
   return (
     <div className="py-20 bg-gray-50 min-h-screen">

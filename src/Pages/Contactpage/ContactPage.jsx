@@ -292,7 +292,7 @@ export default function ContactPage() {
                     htmlType="submit"
                     size="large"
                     loading={loading}
-                    className="w-full h-12 text-base font-semibold bg-amber-400 border-amber-400 hover:bg-amber-500 hover:border-amber-500"
+                    className="w-full h-12 text-base font-semibold !bg-[#FCBA00] border-amber-400 hover:bg-amber-500 hover:border-amber-500 !text-slate-950"
                   >
                     {loading ? "Sending Message..." : "Send Message"}
                   </Button>
@@ -317,7 +317,7 @@ export default function ContactPage() {
               type="primary"
               size="large"
               icon={<PhoneOutlined />}
-              className="bg-slate-800 border-slate-800 hover:bg-slate-700 hover:border-slate-700"
+              className="border-slate-800 hover:!bg-blue-900 !bg-[#0F172C] hover:border-slate-700"
             >
               Call Now: +63 2 1234 5678
             </Button>
