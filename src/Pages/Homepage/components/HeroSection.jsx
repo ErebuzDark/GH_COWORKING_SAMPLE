@@ -1,11 +1,17 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white">
+    <div
+      className="relative bg-cover bg-center bg-no-repeat text-white"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')",
+      }}
+    >
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className="relative max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8">
         <div className="text-center">
@@ -15,13 +21,20 @@ export default function HeroSection() {
             Workspace Awaits
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
-            Premium coworking spaces, private offices, and meeting rooms designed for professionals who demand excellence
+            Premium coworking spaces, private offices, and meeting rooms
+            designed for professionals who demand excellence
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button  onClick={() => navigate("/offers")}className="bg-amber-400 hover:bg-amber-500 text-slate-900 px-8 py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center">
+            <button
+              onClick={() => navigate("/offers")}
+              className="bg-amber-400 hover:bg-amber-500 text-slate-900 px-8 py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center"
+            >
               Explore Spaces <ArrowRight className="ml-2" size={20} />
             </button>
-            <button onClick={() => navigate("/contact")} className="border-2 border-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+            <button
+              onClick={() => navigate("/contact")}
+              className="border-2 border-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg text-lg font-semibold transition-colors"
+            >
               Schedule Tour
             </button>
           </div>

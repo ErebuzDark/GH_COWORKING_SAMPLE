@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
-const Navigation = ({ currentPage, setCurrentPage }) => {
- const navigate = useNavigate();
+const Navigation = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(true);
+  const [currentPage, setCurrentPage] = useState(false);
   
   const navItems = [
     { id: 'home', label: 'Home', path: "/" },
@@ -12,12 +14,29 @@ const Navigation = ({ currentPage, setCurrentPage }) => {
     { id: 'features', label: 'Why Choose Us', path: "/features" }
   ];
 
-  const redirect = (path) => {
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      console.log('Scroll position:', scrollPosition); // Debug log
+      setIsScrolled(scrollPosition > 50 ? true : false);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const redirect = (path, id) => {
+    setCurrentPage(id);
     navigate(path);
   };
 
   return (
-    <nav className="bg-slate-900 text-white shadow-lg sticky top-0 z-50">
+    <nav className={`text-white sticky top-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-opacity-90 backdrop-blur-sm' 
+        : 'bg-slate-900'
+    }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
@@ -30,12 +49,12 @@ const Navigation = ({ currentPage, setCurrentPage }) => {
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => redirect(item.path)}
+                  onClick={() => redirect(item.path, item.id)}
                   className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                     currentPage === item.id
                       ? 'bg-amber-400 text-slate-900'
-                      : 'text-gray-300 hover:bg-slate-700 hover:text-white'
-                  }`}
+                      : 'text-gray-300 hover:bg-slate-700 hover:bg-opacity-70 hover:text-white'
+                  } ${isScrolled ? 'text-slate-900' : ''}`}
                 >
                   {item.label}
                 </button>
@@ -58,7 +77,9 @@ const Navigation = ({ currentPage, setCurrentPage }) => {
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800">
+          <div className={`px-2 pt-2 pb-3 space-y-1 sm:px-3 transition-colors ${
+            isScrolled ? 'bg-slate-800 bg-opacity-90 backdrop-blur-sm' : 'bg-slate-800'
+          }`}>
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -69,7 +90,7 @@ const Navigation = ({ currentPage, setCurrentPage }) => {
                 className={`block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
                   currentPage === item.id
                     ? 'bg-amber-400 text-slate-900'
-                    : 'text-gray-300 hover:bg-slate-700 hover:text-white'
+                    : 'text-gray-300 hover:bg-slate-700 hover:bg-opacity-70 hover:text-white'
                 }`}
               >
                 {item.label}

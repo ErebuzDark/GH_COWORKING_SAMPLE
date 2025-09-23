@@ -1,14 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Check } from "lucide-react";
 
 const SpaceCard = ({
   title,
+  path,
   description,
   price,
   features,
   image,
   popular = false,
 }) => {
+  const navigate = useNavigate();
   return (
     <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] relative max-w-2xl mx-auto">
       {popular && (
@@ -42,7 +45,7 @@ const SpaceCard = ({
           ))}
         </ul>
 
-        <button className="w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-semibold transition-colors">
+        <button onClick={() => navigate(`/space-details/${path}`)} className="w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-xl font-semibold transition-colors">
           Book Now
         </button>
       </div>
