@@ -167,42 +167,47 @@ const SpaceDetailsPage = () => {
               Specifications
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
+              <div className="bg-white border border-slate-200 hover:bg-gradient-to-br hover:from-blue-50 hover:to-blue-100 p-6 rounded-xl transition-colors duration-300">
                 <Users className="text-blue-600 mb-3" size={32} />
                 <h3 className="font-semibold text-slate-900 mb-2">Capacity</h3>
                 <p className="text-gray-700">
                   {currentSpace.specifications.capacity}
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
+
+              <div className="bg-white border border-slate-200 hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 p-6 rounded-xl transition-colors duration-300">
                 <MapPin className="text-green-600 mb-3" size={32} />
                 <h3 className="font-semibold text-slate-900 mb-2">Location</h3>
                 <p className="text-gray-700">
                   {currentSpace.specifications.location}
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl">
+
+              <div className="bg-white border border-slate-200 hover:bg-gradient-to-br hover:from-purple-50 hover:to-purple-100 p-6 rounded-xl transition-colors duration-300">
                 <Clock className="text-purple-600 mb-3" size={32} />
                 <h3 className="font-semibold text-slate-900 mb-2">Hours</h3>
                 <p className="text-gray-700">
                   {currentSpace.specifications.hours}
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-xl">
+
+              <div className="bg-white border border-slate-200 hover:bg-gradient-to-br hover:from-amber-50 hover:to-amber-100 p-6 rounded-xl transition-colors duration-300">
                 <Coffee className="text-amber-600 mb-3" size={32} />
                 <h3 className="font-semibold text-slate-900 mb-2">Tables</h3>
                 <p className="text-gray-700">
                   {currentSpace.specifications.tables}
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl">
+
+              <div className="bg-white border border-slate-200 hover:bg-gradient-to-br hover:from-red-50 hover:to-red-100 p-6 rounded-xl transition-colors duration-300">
                 <Printer className="text-red-600 mb-3" size={32} />
                 <h3 className="font-semibold text-slate-900 mb-2">Storage</h3>
                 <p className="text-gray-700">
                   {currentSpace.specifications.storage}
                 </p>
               </div>
-              <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-xl">
+
+              <div className="bg-white border border-slate-200 hover:bg-gradient-to-br hover:from-indigo-50 hover:to-indigo-100 p-6 rounded-xl transition-colors duration-300">
                 <Wifi className="text-indigo-600 mb-3" size={32} />
                 <h3 className="font-semibold text-slate-900 mb-2">Internet</h3>
                 <p className="text-gray-700">

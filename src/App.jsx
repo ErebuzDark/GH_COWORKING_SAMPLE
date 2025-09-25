@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Homepage from './Pages/Homepage/Homepage';
 import OffersPage from './Pages/Offerspage/OffersPage';
-import SpaceDetailsPage from './Pages/SpaceDetailspage/SpaceDetailspage';
+import SpaceDetailsPage from './Pages/SpaceDetailspage/SpaceDetailsPage';
 import FeaturesPage from './Pages/Featurespage/FeaturesPage';
 import ContactPage from './Pages/Contactpage/ContactPage';
 
